@@ -1,6 +1,7 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Bricolage_Grotesque } from "@/utils/fonts" 
+import Layout from '@/layout/Layout'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -10,7 +11,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: {children: React.ReactNode}) {
   return (
     <html lang="en">
-      <body className={Bricolage_Grotesque.className}>{children}</body>
+      <body className={Bricolage_Grotesque.className}>
+        <Layout>
+          {children}
+        </Layout>
+      </body>
     </html>
   )
 }

@@ -12,7 +12,8 @@ const config: Config = {
       "lightBlue" : "#08D9D6",
       "dark": "#252A34",
       "RED": "#FF2E63",
-      "milk" : "#EAEAEA"
+      "milk" : "#EAEAEA",
+      "f6" :"#f6f6f6"
      }
     },
     container : {

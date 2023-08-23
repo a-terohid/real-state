@@ -28,6 +28,7 @@
       "@/module/*": ["src/components/module/*"],
       "@/template/*": ["src/components/template/*"],
       "@/providers/*": ["src/providers/*"],
+      "@/types/*": ["src/types/*"],
       "@/api/*": ["src/app/api/*"],
       "@/constants/*": ["src/constants/*"]
     }

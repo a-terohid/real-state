@@ -22,9 +22,9 @@ const Header = () => {
                         }
                     </div>
                     <div className='hidden sm:flex gap-x-6 items-center  flex-1' >
+                        <Link href="/signup" className=' bg-RED px-3 py-2 rounded ' >Sign up</Link>
                         <Link href="./" >Home page</Link>
                         <Link href='./advertisments' >Advertisements</Link>
-                        <Link href="/signin" className=' bg-RED px-3 py-2 rounded ' >Sign in</Link>
                     </div>
                     <div className=' text-lightBlue sm:text-2xl text-lg' >
                         <Link href="./" >Real State</Link>

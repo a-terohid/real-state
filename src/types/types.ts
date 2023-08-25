@@ -7,7 +7,7 @@ export interface User  {
     email : string,
     password : string,
     number ?: string,
-    dateAdded : Date,
+    createdAt : Date,
     personalID ?: string,
     role : ROLE ,
     numberOfAds ?: number
@@ -28,4 +28,18 @@ export interface Profile {
    publishedBY : string
    Rejected : boolean
    rejectNUM : number
+}
+
+export type InputType = {
+    value : string,
+    label : string,
+    changeHandler : Function,
+    type : string,
+    name : string,
+}
+
+
+export type AuthType = {
+    email : string,
+    password : string,
 }

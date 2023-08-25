@@ -18,6 +18,7 @@ export enum ERROR {
     USER_EXIST = "this user already exists!",
     CANT_FIND_USER = "this user cannot be found!",
     INVALID_DATA = "please enter a valid data",
+    REPEAT_PASSWORD = "The password and its repetition are not equal"
 }
 
 export enum MESSAGE {

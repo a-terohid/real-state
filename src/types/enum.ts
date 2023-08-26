@@ -14,11 +14,13 @@ export enum CATEGORY {
 
 
 export enum ERROR {
-    SERVER_ERROR = "there is error in server!",
-    USER_EXIST = "this user already exists!",
-    CANT_FIND_USER = "this user cannot be found!",
-    INVALID_DATA = "please enter a valid data",
-    REPEAT_PASSWORD = "The password and its repetition are not equal"
+    SERVER_ERROR = "There is error in server!",
+    USER_EXIST = "This user already exists!",
+    CANT_FIND_USER = "This user cannot be found!",
+    INVALID_DATA = "please enter a valid data!",
+    REPEAT_PASSWORD = "The password and its repetition are not equal!",
+    CREATE_ACCOUNT = "Please create an account first!",
+    WRONG_PASSWORD = "Email or password is incorrect!",
 }
 
 export enum MESSAGE {

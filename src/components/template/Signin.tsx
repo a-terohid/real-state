@@ -58,8 +58,8 @@ const Signin =() => {
 
     return (
         <div className=" container flex flex-col h-[600px] items-center justify-center " >
-            <div className="border-dark border-2 w-fit p-7 shadow-xl bg-dark rounded-lg" >
-                <h4 className=" text-lightBlue  text-xl" >Sign Up Form</h4>
+            <div className="border-dark border-2 w-fit p-7 shadow-xl bg-wg rounded-lg" >
+                <h4 className="text-xl" >Sign Up Form</h4>
                 <form className="flex flex-col gap-y-6 mt-5" >
                     <Input 
                         value={ email }
@@ -76,10 +76,10 @@ const Signin =() => {
                    
                     {
                         loading ? <Loader /> :
-                            <button type="submit" onClick={ signinHandler } className=" bg-RED rounded py-2 text-f6" >sign in</button>
+                            <button type="submit" onClick={ signinHandler } className=" bg-Lorange rounded py-2" >sign in</button>
                     }
-                    <div className="flex items-center justify-center text-f6" >
-                        <p>dont have an account? <Link href="/signup" className=" text-RED">sign up</Link></p>
+                    <div className="flex items-center justify-cente" >
+                        <p>dont have an account? <Link href="/signup" className=" text-orange">sign up</Link></p>
                     </div>
                 </form>
             </div>

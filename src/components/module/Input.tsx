@@ -6,7 +6,7 @@ const Input = ( { changeHandler , value, label , type , name } : InputType ) => 
 
     return (
         <div className="flex flex-col gap-y-2 " >
-            <label className=" text-f6" >{ label }</label>
+            <label >{ label }</label>
             <input 
                 type={ type }
                 value={ value }

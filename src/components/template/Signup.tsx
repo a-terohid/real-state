@@ -83,10 +83,10 @@ const Signup = () => {
                         type = "password" />
                     {
                         loading ? <Loader /> :
-                            <button type="submit" onClick={ signupHandler } className=" bg-RED rounded py-2 text-f6" >sign up</button>
+                            <button type="submit" onClick={ signupHandler } className=" bg-Lorange rounded py-2" >sign up</button>
                     }
-                    <div className="flex items-center justify-center text-f6" >
-                        <p>have an account? <Link href="/signin" className=" text-RED">sign in</Link></p>
+                    <div className="flex items-center justify-center" >
+                        <p>have an account? <Link href="/signin" className=" text-Lorange">sign in</Link></p>
                     </div>
                 </form>
             </div>

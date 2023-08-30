@@ -21,6 +21,7 @@ export enum ERROR {
     REPEAT_PASSWORD = "The password and its repetition are not equal!",
     CREATE_ACCOUNT = "Please create an account first!",
     WRONG_PASSWORD = "Email or password is incorrect!",
+    PROBLEM = "There is a Problem!"
 }
 
 export enum MESSAGE {

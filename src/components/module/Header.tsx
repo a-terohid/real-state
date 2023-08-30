@@ -17,7 +17,7 @@ const Header = () => {
     
 
     return (
-        <div className="bg-dark py-5 fixed w-full z-10" >
+        <div className=" bg-Green py-5 fixed w-full z-10" >
             <div className=' container items-center text-f6' >
                 <div className='flex' >
                     <div className='sm:hidden flex-1 text-2xl' >
@@ -29,13 +29,13 @@ const Header = () => {
                         {
                             status == "authenticated" ?
                                 <Link href="./dashboard" className="flex items-center gap-x-2" ><IoPersonCircleOutline className=" text-2xl"/>Dashboard</Link> 
-                            :  <Link href="/signin" className=' bg-RED px-3 py-2 rounded ' >Sign in</Link>
+                            :  <Link href="/signin" className=' bg-orange px-3 py-2 rounded ' >Sign in</Link>
 
                         }
                         <Link href="./" >Home page</Link>
                         <Link href='./advertisments' >Advertisements</Link>
                     </div>
-                    <div className=' text-lightBlue sm:text-2xl text-lg' >
+                    <div className='sm:text-2xl text-lg' >
                         <Link href="./" >Real State</Link>
                     </div>
                 </div>
@@ -46,7 +46,7 @@ const Header = () => {
                         {
                             status == "authenticated" ?
                                 <Link href="./dashboard"className="flex items-center gap-x-2" ><IoPersonCircleOutline className=" text-lg"/>Dashboard</Link> 
-                            :  <Link href="/signin" className=' bg-RED px-6 py-1 rounded w-fit ' >Sign in</Link>
+                            :  <Link href="/signin" className=' bg-orange px-6 py-1 rounded w-fit ' >Sign in</Link>
 
                         }
                     </div> : null

@@ -43,3 +43,10 @@ export type AuthType = {
     email : string,
     password : string,
 }
+
+
+export type dashboardLayoutProps ={
+    children: React.ReactNode
+    role: ROLE,
+    email: string,
+}

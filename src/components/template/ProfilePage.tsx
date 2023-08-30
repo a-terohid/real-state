@@ -1,6 +1,7 @@
 import User from '@/models/User';
 import LogOutButtom from '@/module/LogOutButtom';
 import { ProfilePageProps } from '@/types/types';
+import { mask } from '@/utils/mask';
 import Link from 'next/link';
 
 const ProfilePage = ( { user } : ProfilePageProps ) => {
@@ -26,7 +27,7 @@ const ProfilePage = ( { user } : ProfilePageProps ) => {
                 </div>
                 <div className='flex flex-wrap items-center'>
                     <p className=' font-bold md:text-lg' >Phone Number:</p>
-                    { number ? <span className=' ml-3' >{ number }</span> : <span className=' ml-3 text-sm md:text-base italic text-orange ' >this filed is epmty!</span> } 
+                    { number ? <span className=' ml-3' >{ mask( number , "****-***-****" ) }</span> : <span className=' ml-3 text-sm md:text-base italic text-orange ' >this filed is epmty!</span> } 
                 </div>
             </div>
             <div className=' flex flex-col md:flex-row md:gap-x-14 lg:gap-x-20  md:py-6 flex-wrap py-3 border-b-2 '>
@@ -36,7 +37,7 @@ const ProfilePage = ( { user } : ProfilePageProps ) => {
                 </div>
             </div>
             <div className=' my-4 md:mt-10 flex items-center justify-center gap-x-4'>
-                <Link href="/dashboard/profile/edite" className=' bg-pinkBrown font-bold md:px-8  px-3 py-1 rounded-md ' >Edite Profile</Link>
+                <Link href="/dashboard/profile/edite" className=' bg-pinkBrown md:px-8 text-sm md:font-bold md:text-base   px-3 py-1 rounded-md ' >EditeProfile</Link>
                 <LogOutButtom />
             </div>
         </div>

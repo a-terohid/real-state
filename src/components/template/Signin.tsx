@@ -2,21 +2,27 @@
 
 import Input from "@/module/Input";
 import Loader from "@/module/Loader";
-import { ERROR } from "@/types/enum";
 import { AuthType } from "@/types/types";
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
 import { useState } from "react";
 import { Toaster, toast } from "react-hot-toast";
+import { SignInResponse, signIn } from "next-auth/react";
 
-const Signup = () => {
+type s = {
+    error?: string | undefined
+    status?: number
+    ok?: boolean
+    url?: string | null
+  }
+
+const Signin =() => {
 
     const [ data , setData ] = useState<AuthType>({
         email: "",
         password: "",
     })
     const [loading, setLoading] = useState<boolean>(false);
-    const [repeat, setrepeat] = useState<string>("");
 
     const { email, password } = data
 
@@ -27,34 +33,26 @@ const Signup = () => {
         setData({ ...data , [ name ] : value })
     }
 
-    const signupHandler = async ( event: any ) => {
+    const signinHandler = async ( event: any ) => {
 
-        event.preventDefault(); 
-
-        if( password !== repeat ){
-            toast.error( ERROR.REPEAT_PASSWORD );
-            return;
-        }
+        event.preventDefault();
 
         setLoading( true );
 
-        const res = await fetch("/api/auth/signup" , {
-            method: "POST",
-            body : JSON.stringify( data ),
-            headers: { "Content-Type": "application/json" },
+        const res : Promise<s> | any = await signIn( "credentials" , {
+            email,
+            password,
+            redirect: false,
         })
 
-        const resData = await res.json()
-        console.log( resData );
+        setLoading(false);
+        
 
-        setLoading( false );
-
-        if (resData.error) {
-            toast.error(resData.error);
+        if ( res.error ) {
+            toast.error( res.error );
         } else {
             router.push("/");
         }
-        
 
     }
 
@@ -75,18 +73,13 @@ const Signup = () => {
                         changeHandler = {changeHandler}
                         label= "Password:"
                         type = "password" />
-                    <Input 
-                        value={ repeat }
-                        name="password"
-                        changeHandler = { (event:any) => setrepeat(event.target.value) }
-                        label= "repeat Password:"
-                        type = "password" />
+                   
                     {
                         loading ? <Loader /> :
-                            <button type="submit" onClick={ signupHandler } className=" bg-RED rounded py-2 text-f6" >sign up</button>
+                            <button type="submit" onClick={ signinHandler } className=" bg-RED rounded py-2 text-f6" >sign in</button>
                     }
                     <div className="flex items-center justify-center text-f6" >
-                        <p>have an account? <Link href="/signin" className=" text-RED">sign in</Link></p>
+                        <p>dont have an account? <Link href="/signup" className=" text-RED">sign up</Link></p>
                     </div>
                 </form>
             </div>
@@ -95,4 +88,4 @@ const Signup = () => {
     );
 };
 
-export default Signup;
+export default Signin;

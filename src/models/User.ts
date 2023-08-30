@@ -38,7 +38,12 @@ const UserSchema = new Schema<User , Schema.Types.ObjectId>({
     numberOfAds : {
         type: Number,
         default : 0
+    },
+    personalID : {
+        type: String,
+        default : ""
     }
+    
 } , { collection : "real-state-user" })
 
 

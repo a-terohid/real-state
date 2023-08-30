@@ -60,7 +60,7 @@ const Signup = () => {
 
     return (
         <div className=" container flex flex-col h-[600px] items-center justify-center " >
-            <div className="border-dark border-2 w-fit p-7 shadow-xl bg-dark rounded-lg" >
+            <div className="border-dark border-2 w-fit p-7 shadow-xl bg-wg rounded-lg" >
                 <h4 className=" text-lightBlue  text-xl" >Sign Up Form</h4>
                 <form className="flex flex-col gap-y-6 mt-5" >
                     <Input 

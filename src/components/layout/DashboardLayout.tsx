@@ -15,7 +15,7 @@ const DashboardLayout = ({ children , role , email }: dashboardLayoutProps ) => 
                     <BsPersonCircle className=" text-4xl mb-2 " />
                     <p className=' mb-3' >{ email }</p>
                     { role == ROLE.ADMIN ? <p className=' px-2 font-bold bg-[#88d4ab] text-[#14746f] rounded-md'>admin</p> : null }
-                    { role == ROLE.OWNER ? <p className=' px-2 font-bold bg-[#ff8fa3] text-[#a4133c] rounded-md' >owner</p> : null }
+                    { role == ROLE.OWNER ? <p className=' px-2 font-bold bg-[#682a92] text-[#ffd000] rounded-md' >owner</p> : null }
                 </div>
                 <Link className={ LinkStyle }  href="/dashboard" >Dashboard</Link>
                 <Link className={ LinkStyle }  href="/dashboard/profile" >Profile</Link>

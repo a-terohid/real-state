@@ -50,3 +50,7 @@ export type dashboardLayoutProps ={
     role: ROLE,
     email: string,
 }
+
+export type ProfilePageProps = {
+    user : User
+}

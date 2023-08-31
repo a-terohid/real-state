@@ -7,7 +7,7 @@ export enum ROLE  {
 
 export enum CATEGORY {
     VILLA = "villa",
-    APARYMENT = "apartment",
+    APARTMENT = "apartment",
     STORE = "store",
     OFFICE = "office"
 }

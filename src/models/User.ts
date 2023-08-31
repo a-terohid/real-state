@@ -1,6 +1,6 @@
 import { ROLE } from '@/types/enum';
 import { User } from '@/types/types';
-import { Schema, SchemaTypeOptions, model, models } from "mongoose";
+import { Schema, model, models } from "mongoose";
 
 const UserSchema = new Schema<User , Schema.Types.ObjectId>({
     name : {

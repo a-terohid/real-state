@@ -13,7 +13,7 @@ export interface User  {
     numberOfAds ?: number
 }
 
-export interface Profile {    
+export interface Advertisement {    
    UserId : Schema.Types.ObjectId,
    Title : string
    Description : string
@@ -25,9 +25,9 @@ export interface Profile {
    Amenities ?: string[]
    Rules ?: string[]
    Published : boolean
-   publishedBY : string
+   PublishedBY : string
    Rejected : boolean
-   rejectNUM : number
+   RejectNUM : number
 }
 
 export type InputType = {

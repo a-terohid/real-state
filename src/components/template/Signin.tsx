@@ -66,13 +66,15 @@ const Signin =() => {
                         name= "email"
                         changeHandler = {changeHandler}
                         label= "Email:"
-                        type = "text" />
+                        type = "text"
+                        textarea = {false} />
                     <Input 
                         value={ password }
                         name="password"
                         changeHandler = {changeHandler}
                         label= "Password:"
-                        type = "password" />
+                        type = "password"
+                        textarea = {false} />
                    
                     {
                         loading ? <Loader /> :

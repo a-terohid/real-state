@@ -9,8 +9,8 @@ const DashboardLayout = ({ children , role , email }: dashboardLayoutProps ) => 
     const LinkStyle = "bg-pinkBrown w-fit px-3 py-1 rounded-lg text-sm lg:text-base"
 
     return (
-        <div className=' container flex flex-col lg:flex-row lg:gap-x-8 lg:gap-y-0 gap-y-4 mt-4 ' >
-            <div className='flex overflow-auto gap-x-2 lg:flex-col lg:gap-y-3 h-fit lg:bg-pinkBrown lg:w-fit lg:min-w-[230px] lg:py-4 lg:px-4 rounded-xl' >
+        <div className=' container flex flex-col lg:flex-row lg:gap-x-8 lg:gap-y-0 gap-y-4 mt-4 pb-10 ' >
+            <div className='flex overflow-auto gap-x-2 lg:flex-col lg:gap-y-3 h-fit lg:bg-pinkBrown lg:w-fit lg:min-w-[230px] lg:py-4 lg:px-4 rounded-xl shadow-xl' >
                 <div className='lg:flex hidden flex-col items-center border-b-2 pb-3' >
                     <BsPersonCircle className=" text-4xl mb-2 " />
                     <p className=' mb-3' >{ email }</p>
@@ -25,7 +25,7 @@ const DashboardLayout = ({ children , role , email }: dashboardLayoutProps ) => 
                 { role == ROLE.ADMIN || ROLE.OWNER ? <Link className={ LinkStyle } href="/dashboard/users" >Users</Link> : null }
                 { role == ROLE.OWNER ? <Link className={ LinkStyle } href="/dashboard/admins" >Admins</Link> : null }
             </div>
-            <div className=' bg-wg w-full rounded-xl' >{ children }</div>
+            <div className=' bg-wg w-full rounded-xl shadow-xl' >{ children }</div>
         </div>
     );
 };

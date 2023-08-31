@@ -28,6 +28,7 @@ export interface Advertisement {
    PublishedBY : string
    Rejected : boolean
    RejectNUM : number
+   ConstructionDate : Date
 }
 
 export type InputType = {
@@ -36,6 +37,7 @@ export type InputType = {
     changeHandler : Function,
     type : string,
     name : string,
+    textarea: boolean;
 }
 
 

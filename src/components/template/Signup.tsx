@@ -68,19 +68,22 @@ const Signup = () => {
                         name= "email"
                         changeHandler = {changeHandler}
                         label= "Email:"
-                        type = "text" />
+                        type = "text"
+                        textarea = {false}/>
                     <Input 
                         value={ password }
                         name="password"
                         changeHandler = {changeHandler}
                         label= "Password:"
-                        type = "password" />
+                        type = "password"
+                        textarea = {false} />
                     <Input 
                         value={ repeat }
                         name="password"
                         changeHandler = { (event:any) => setrepeat(event.target.value) }
                         label= "repeat Password:"
-                        type = "password" />
+                        type = "password" 
+                        textarea = {false}/>
                     {
                         loading ? <Loader /> :
                             <button type="submit" onClick={ signupHandler } className=" bg-Lorange rounded py-2" >sign up</button>

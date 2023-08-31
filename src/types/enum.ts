@@ -27,5 +27,6 @@ export enum ERROR {
 
 export enum MESSAGE {
     NEW_USER = "user cteated successfully!",
+    NEW_ADVERTISEMENT = "Advertisement cteated successfully!",
     USER_EDITE = "user edited successfully!"
 }

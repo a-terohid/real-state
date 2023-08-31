@@ -52,7 +52,7 @@ const AdvertisementSchema = new Schema< Advertisement , Schema.Types.ObjectId >(
     PublishedBY : {
         type: String,
         required: true,
-        default : ""
+        default : " "
     },
     Rejected : {
         type: Boolean,
@@ -64,8 +64,12 @@ const AdvertisementSchema = new Schema< Advertisement , Schema.Types.ObjectId >(
         required: true,
         default : 0
     },
+    ConstructionDate: {
+        type: Date,
+        required: true,
+      },
 
-} , { collection : "real-state-user" } )
+} , { collection : "real-state-Advertisemen" } )
 
 const Advertisement = models.Advertisement || model("Advertisement", AdvertisementSchema);
 

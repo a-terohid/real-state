@@ -55,37 +55,42 @@ const EditrUserPage = ( { user } : ProfilePageProps ) => {
     return (
         <div className="py-4 px-6" >
             <h1 className=" font-bold text-2xl mb-3" >Edite User</h1>
-            <div className="flex flex-col gap-y-4 md:ml-14" >
+            <div className="flex flex-col gap-y-6 md:ml-14" >
                 <Input
                     value={ USER.name }
                     name= "name"
                     changeHandler = {changeHandler}
                     label= "Name:"
-                    type = "text" />
+                    type = "text"
+                    textarea = {false} />
                 <Input
                     value={ USER.lastName }
                     name= "lastName"
                     changeHandler = {changeHandler}
                     label= "Last Name:"
-                    type = "text" />
+                    type = "text"
+                    textarea = {false} />
                 <Input
                     value={ USER.email }
                     name= "email"
                     changeHandler = {changeHandler}
                     label= "Email:"
-                    type = "text" />
+                    type = "text"
+                    textarea = {false} />
                 <Input
                     value={ USER.number }
                     name= "number"
                     changeHandler = {changeHandler}
                     label= "Phone Number:"
-                    type = "text" />
+                    type = "text"
+                    textarea = {false}/>
                 <Input
                     value={ USER.personalID }
                     name= "personalID"
                     changeHandler = {changeHandler}
                     label= "PersonalID:"
-                    type = "text" />
+                    type = "text"
+                    textarea = {false} />
             </div>
             <div className="flex items-center justify-center mt-8 mb-4" >
                 {

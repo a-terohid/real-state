@@ -32,17 +32,17 @@ const Header = () => {
                             :  <Link href="/signin" className=' bg-orange px-3 py-2 rounded ' >Sign in</Link>
 
                         }
-                        <Link href="./" >Home page</Link>
-                        <Link href='./advertisments' >Advertisements</Link>
+                        <Link href="/" >Home page</Link>
+                        <Link href='/advertisments' >Advertisements</Link>
                     </div>
                     <div className='sm:text-2xl text-lg' >
-                        <Link href="./" >Real State</Link>
+                        <Link href="/" >Real State</Link>
                     </div>
                 </div>
                 {
                     flag ? <div className=' gap-y-4 flex flex-col py-4 ' >
                         <Link href="./" >Home page</Link>
-                        <Link href='./advertisments' >Advertisements</Link>
+                        <Link href='/advertisments' >Advertisements</Link>
                         {
                             status == "authenticated" ?
                                 <Link href="/dashboard"className="flex items-center gap-x-2" ><IoPersonCircleOutline className=" text-lg"/>Dashboard</Link> 

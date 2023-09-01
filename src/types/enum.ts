@@ -23,10 +23,17 @@ export enum ERROR {
     WRONG_PASSWORD = "Email or password is incorrect!",
     PROBLEM = "There is a Problem!",
     LOGIN = "Please login to your account!",
+    NO_ADS = "No advertisement have been registered!"
 }
 
 export enum MESSAGE {
     NEW_USER = "user cteated successfully!",
     NEW_ADVERTISEMENT = "Advertisement cteated successfully!",
     USER_EDITE = "user edited successfully!"
+}
+
+export enum ADS_STATUS  {
+    PUBLISHED = "Published",
+    WAITING = "Waiting",
+    REJECTED = "Rejected",
 }

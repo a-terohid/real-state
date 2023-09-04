@@ -5,6 +5,7 @@ import { IoPricetags } from "react-icons/io5"
 import Link from "next/link";
 import { adsStatus } from "@/utils/adsStatus";
 import { ADS_STATUS } from "@/types/enum";
+import { sp } from "@/utils/mask";
 
 
 const Card = ({ data , dashboard }) => {
@@ -23,7 +24,7 @@ const Card = ({ data , dashboard }) => {
                 <p className="flex gap-x-2 items-start text-xs" >
                     <HiOutlineLocationMarker className="text-2xl text-orange font-bold" />
                     <span className="mt-1" >{ Address }</span></p>
-                <p className="flex gap-x-2 items-center" ><IoPricetags className="text-orange font-bold"/>{ Cost } $</p>
+                <p className="flex gap-x-2 items-center" ><IoPricetags className="text-orange font-bold"/>{ sp( Cost ) } $</p>
             </div>
             { dashboard ?
                 <div className="my-3" >
@@ -33,7 +34,11 @@ const Card = ({ data , dashboard }) => {
                 </div> : null
             }
             <div className="flex justify-end mt-3" >
-                <Link href={`/advertisments/${_id}`} className="flex gap-x-1 text-orange items-center text-xs" ><BiLeftArrowAlt />See Advertisments</Link>
+                {
+                    !dashboard ? 
+                         <Link href={`/advertisments/${_id}`} className="flex gap-x-1 text-orange items-center text-xs" ><BiLeftArrowAlt />See Advertisments</Link>
+                    : <Link href={`/dashboard/my-advertisments/${_id}`} className="flex gap-x-1 text-orange items-center text-xs" ><BiLeftArrowAlt />See Advertisments</Link>
+                }
             </div>
         </div>
     );

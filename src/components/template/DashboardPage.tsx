@@ -7,7 +7,7 @@ const DashboardPage = ({ createdAt } : { createdAt : Date } ) => {
             <p>Register your ads to be seen by thousands of people.</p>
             <div className=' mt-5 flex gap-x-3' >
                 <p>Registery date:</p>
-                <span className=' text-orange' >{new Date(createdAt).toLocaleDateString() }</span>
+                <span className=' text-orange' >{ new Date(createdAt).toLocaleDateString() }</span>
             </div>
         </div>
     );

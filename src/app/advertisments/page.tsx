@@ -6,7 +6,7 @@ import React from 'react';
 const page = async ({ searchParams }) => {
 
     await connectDB();
-    const advertisments = await Advertisement.find()
+    const advertisments = await Advertisement.find({ Published: true })
 
     let finalData = advertisments;
     if (searchParams.category) {

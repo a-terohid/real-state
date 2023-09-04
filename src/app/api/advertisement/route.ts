@@ -173,6 +173,10 @@ export async function PATCH( req : Request ) {
                 advertisement.Amenities= amenities ,
                 advertisement.Rules= rules,
                 advertisement.ConstructionDate = constructionDate
+                advertisement.Published = false
+                advertisement.Rejected = true
+                advertisement.RejectNUM = 0
+
                 advertisement.save()
 
                 return NextResponse.json(

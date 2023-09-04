@@ -55,9 +55,6 @@ const EditeAdverismentPage = ({ advertisments  }) => {
             rules,
             constructionDate  } = AddAdvertisementData
 
-            console.log(amenities);
-            console.log(rules);
-            
         
             
 
@@ -155,7 +152,7 @@ const EditeAdverismentPage = ({ advertisments  }) => {
             <div className="flex items-center justify-center mt-8 mb-4" >
                 {
                     loading ? <Loader/> 
-                    : <button type="submit" onClick={ ( e ) => editeHandler( e ) }  className=" bg-Lorange font-bold md:px-16  px-6 py-1 rounded-md " >Add</button>
+                    : <button type="submit" onClick={ ( e ) => editeHandler( e ) }  className=" bg-Lorange font-bold md:px-16  px-6 py-1 rounded-md " >Edite</button>
                 }
             </div>
             <Toaster />

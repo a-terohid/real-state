@@ -29,7 +29,6 @@ const DetailsPag = ({ advertisments , dashboard , waiting }) => {
 
             
             const status = adsStatus(  Published  , Rejected ,RejectNUM )
-
     
 
     return (

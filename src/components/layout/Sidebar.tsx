@@ -11,8 +11,9 @@ const Sidebar = ({params}) => {
             <div className="flex lg:flex-col gap-x-3 lg:pl-3" >
                 <Link className= {` w-fit px-3 py-1 rounded-lg text-sm lg:text-base ${ !params ? "bg-orange": "bg-Lorange lg:bg-pinkBrown" } `} href='./advertisments' >All</Link>
                 {
-                    Object.keys( categoriesString ).map( (i) => (
+                    Object.keys( categoriesString ).map( (i , index ) => (
                         <Link
+                            key={ index }
                             href={{
                                 pathname: "/advertisments",
                                 query: { category: i },

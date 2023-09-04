@@ -33,6 +33,7 @@ export enum MESSAGE {
     NEW_ADVERTISEMENT = "Advertisement cteated successfully!",
     USER_EDITE = "user edited successfully!",
     AD_EDITE = "Advertisement edited successfully!",
+    AD_DELETE = "Advertisement deleted successfully!",
 }
 
 export enum ADS_STATUS  {

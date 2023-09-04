@@ -148,9 +148,10 @@ const DetailsPag = ({ advertisments , dashboard }) => {
             {
                 dashboard? <div className="flex py-4 gap-x-4 items-center justify-center" >
                     <Link className=' bg-pinkBrown md:px-8 text-sm md:font-bold md:text-base   px-3 py-1 rounded-md ' href={`/dashboard/my-advertisments/${_id}/edite`} >Edite</Link>
-                    <DeleteAdButton />
+                    <DeleteAdButton  _id={ _id } />
                 </div> : null
             }
+        
         </div>
     );
 };

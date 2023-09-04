@@ -4,20 +4,19 @@ import { ERROR } from "@/types/enum";
 import connectDB from "@/utils/connectDB";
 
 
-const page = async ({ params: { advertismentsId } }) => {
+const page = async ({ params: { myAdvertismentsId } }) => {
 
     await connectDB()
-    
-    const advertisments = await Advertisement.findOne({ _id : advertismentsId })
+    const advertisments = await Advertisement.findOne({ _id : myAdvertismentsId });
     
 
     if( !advertisments ) {
         return( <div className='flex items-center justify-center h-[500px]' >
-            <h3 className='font-bold text-2xl border-b-4 border-lightBlue py-2' >{ERROR.PROBLEM}2</h3>
+            <h3 className='font-bold text-2xl border-b-4 border-lightBlue py-2' >{ERROR.PROBLEM}</h3>
         </div> )
     }
 
-    return ( <DetailsPag advertisments={ advertisments } waiting={false} dashboard={ false } /> );
+    return ( <DetailsPag advertisments={ advertisments }  dashboard={ true } waiting={ true } /> );
 };
 
 export default page;

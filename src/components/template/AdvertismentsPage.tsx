@@ -19,7 +19,7 @@ const AdvertismentsPage = ( { data , params } ) => {
                     { data.length ? null : 
                             <p className=' font-bold ml-5 mt-4 text-sm text-orange' >{ ERROR.NO_ADS }</p> }
                     { data.map(( advertisement : any ) => (
-                        <Card key={ advertisement._id } data={advertisement} dashboard={ false } />))
+                        <Card key={ advertisement._id } data={advertisement} dashboard={ false } waiting={false} />))
                     }
                 </div>
             </div>

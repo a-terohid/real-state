@@ -16,7 +16,7 @@ const page = async ({ params: { myAdvertismentsId } }) => {
         </div> )
     }
 
-    return ( <DetailsPag advertisments={ advertisments }  dashboard={ true } /> );
+    return ( <DetailsPag advertisments={ advertisments }  dashboard={ true } waiting={false} /> );
 };
 
 export default page;

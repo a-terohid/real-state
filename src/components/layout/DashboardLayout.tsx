@@ -21,7 +21,7 @@ const DashboardLayout = ({ children , role , email }: dashboardLayoutProps ) => 
                 <Link className={ LinkStyle }  href="/dashboard/profile" >Profile</Link>
                 <Link className={ LinkStyle }  href="/dashboard/my-advertisments" >MyAdvertisments</Link>
                 <Link className={ LinkStyle }  href="/dashboard/add-advertisments" >AddAdvertisments</Link>
-                { role == ROLE.ADMIN || role == ROLE.OWNER ? <Link className={ LinkStyle } href="/dashboard/users" >waitingAdvertisments</Link> : null }
+                { role == ROLE.ADMIN || role == ROLE.OWNER ? <Link className={ LinkStyle } href="/dashboard/waiting-Advertisments" >waitingAdvertisments</Link> : null }
                 { role == ROLE.ADMIN || role == ROLE.OWNER ? <Link className={ LinkStyle } href="/dashboard/users" >Users</Link> : null }
                 { role == ROLE.OWNER ? <Link className={ LinkStyle } href="/dashboard/admins" >Admins</Link> : null }
             </div>

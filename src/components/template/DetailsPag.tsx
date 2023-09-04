@@ -1,13 +1,15 @@
 import { icons } from "@/constants/icons";
-import Checkbutton from "@/module/CheckButton";
-import DeleteAdButton from "@/module/DeleteAdButton";
+import Checkbutton from "src/components/elements/CheckButton";
+import DeleteAdButton from "src/components/elements/DeleteAdButton";
 import { ADS_STATUS } from "@/types/enum";
 import { adsStatus } from "@/utils/adsStatus";
 import { sp } from "@/utils/mask";
 import Link from "next/link";
+import RejectButton from "../elements/RejectButton";
+import PublishdButton from "../elements/PublishdButton";
 
 
-const DetailsPag = ({ advertisments , dashboard }) => {
+const DetailsPag = ({ advertisments , dashboard , waiting }) => {
 
     const { Title, 
             Description,
@@ -110,7 +112,7 @@ const DetailsPag = ({ advertisments , dashboard }) => {
                 </div> : null 
             }
             {
-                dashboard ? <div className="border-b-2">
+                dashboard && !waiting ? <div className="border-b-2">
                     {
                         status === ADS_STATUS.PUBLISHED ? 
                             <div className="py-4 flex flex-col gap-y-3" >
@@ -140,15 +142,21 @@ const DetailsPag = ({ advertisments , dashboard }) => {
                                     <p className=" font-bold md:text-lg text-sm text-orange" >Status: </p>
                                     <p className=" bg-[#ff8fa3] text-[#a4133c] px-2 py-1 rounded text-xs md:text-base w-fit" >{ status }</p>
                                 </div>
-                                <Checkbutton />
+                                <Checkbutton _id={ _id } />
                             </div> : null
                     }
                 </div> : null
             }
             {
-                dashboard? <div className="flex py-4 gap-x-4 items-center justify-center" >
+                dashboard && !waiting ? <div className="flex py-4 gap-x-4 items-center justify-center" >
                     <Link className=' bg-pinkBrown md:px-8 text-sm md:font-bold md:text-base   px-3 py-1 rounded-md ' href={`/dashboard/my-advertisments/${_id}/edite`} >Edite</Link>
                     <DeleteAdButton  _id={ _id } />
+                </div> : null
+            }
+            {
+                dashboard && waiting ? <div className="flex py-4 gap-x-4 items-center justify-center" >
+                    <PublishdButton _id = { _id } />
+                    <RejectButton _id = { _id } />
                 </div> : null
             }
         

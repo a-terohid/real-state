@@ -1,5 +1,5 @@
 import User from '@/models/User';
-import LogOutButtom from '@/module/LogOutButtom';
+import LogOutButtom from 'src/components/elements/LogOutButtom';
 import { ProfilePageProps } from '@/types/types';
 import { mask } from '@/utils/mask';
 import Link from 'next/link';

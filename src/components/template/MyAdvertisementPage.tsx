@@ -9,7 +9,7 @@ const myAdvertisementPage = ({ userAdvertisement }) => {
                     { userAdvertisement.length ? null : 
                             <p className=' font-bold ml-5 mt-4 text-sm text-orange' >{ ERROR.NO_ADS }</p> }
                     { userAdvertisement.map(( advertisement : any ) => (
-                        <Card key={ advertisement._id } data={advertisement} dashboard={ true } />))
+                        <Card key={ advertisement._id } data={advertisement} dashboard={ true } waiting={false} />))
                     }
                 </div>
         </div>

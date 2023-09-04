@@ -8,7 +8,7 @@ import { ADS_STATUS } from "@/types/enum";
 import { sp } from "@/utils/mask";
 
 
-const Card = ({ data , dashboard }) => {
+const Card = ({ data , dashboard , waiting }) => {
 
     const { _id, Category, Title, Address, Cost , Published , Rejected ,RejectNUM } = data
 
@@ -37,7 +37,13 @@ const Card = ({ data , dashboard }) => {
                 {
                     !dashboard ? 
                          <Link href={`/advertisments/${_id}`} className="flex gap-x-1 text-orange items-center text-xs" ><BiLeftArrowAlt />See Advertisments</Link>
-                    : <Link href={`/dashboard/my-advertisments/${_id}`} className="flex gap-x-1 text-orange items-center text-xs" ><BiLeftArrowAlt />See Advertisments</Link>
+                    : <div>
+                        {
+                            waiting ? 
+                                <Link href={`/dashboard/waiting-Advertisments/${_id}`} className="flex gap-x-1 text-orange items-center text-xs" ><BiLeftArrowAlt />See Advertisments</Link>
+                            : <Link href={`/dashboard/my-advertisments/${_id}`} className="flex gap-x-1 text-orange items-center text-xs" ><BiLeftArrowAlt />See Advertisments</Link>
+                        }
+                    </div>
                 }
             </div>
         </div>

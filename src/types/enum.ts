@@ -25,7 +25,8 @@ export enum ERROR {
     PROBLEM = "There is a Problem!",
     LOGIN = "Please login to your account!",
     NO_ADS = "No advertisement have been registered!",
-    AD_ACCESS = "Your access is limited to this ad"
+    AD_ACCESS = "Your access is limited to this ad!",
+    ACCESS_DENIED = "access denied!",
 }
 
 export enum MESSAGE {
@@ -34,6 +35,9 @@ export enum MESSAGE {
     USER_EDITE = "user edited successfully!",
     AD_EDITE = "Advertisement edited successfully!",
     AD_DELETE = "Advertisement deleted successfully!",
+    CHECK = "Recheck request successfully sent",
+    AD_PUBLISHED = "Advertisement published successfully!",
+    AD_REJECT = "Advertisement rejected!",
 }
 
 export enum ADS_STATUS  {

@@ -1,11 +1,7 @@
-import React from 'react';
+import HomePage from '@/template/HomePage';
 
 const Home = () => {
-    return (
-        <div>
-           home
-        </div>
-    );
+    return ( <HomePage /> );
 };
 
 export default Home;

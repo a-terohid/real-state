@@ -47,3 +47,22 @@ export enum ADS_STATUS  {
     WAITING = "Waiting",
     REJECTED = "Rejected",
 }
+
+export enum SERVICES {
+    BUY = "Buy",
+    SALE = "Sale",
+    MORTGAGE = "Mortgage",
+    RENT = "Rent",
+}
+
+export enum CITIES  {
+    TEHRAN = "Tehran",
+    SANANDAJ = "Sanandaj",
+    HAMEDAN = "Hamedan",
+    TABRIZ = "Tabriz",
+    ESFEHAN = "Esfehan",
+    SHIRAZ = "Shiraz",
+    AHVAZ = "Ahvaz",
+    RAMSAR = "RAMSAR"
+}
+

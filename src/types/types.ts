@@ -56,3 +56,23 @@ export type dashboardLayoutProps ={
 export type ProfilePageProps = {
     user : User
 }
+
+type AdvertisementMOGO = Advertisement & {
+    _id:  Schema.Types.ObjectId
+}
+
+export type cardProps = {
+    data : AdvertisementMOGO ,
+    dashboard ?: boolean , 
+    waiting ?: boolean ,
+    admin ?: boolean,
+    userID ?: string
+}
+
+
+export type DetailsPageProps = {
+    advertisments : AdvertisementMOGO
+    dashboard ?: boolean , 
+    waiting ?: boolean ,
+    admin ?: boolean,
+}

@@ -6,9 +6,10 @@ import Link from "next/link";
 import { adsStatus } from "@/utils/adsStatus";
 import { ADS_STATUS } from "@/types/enum";
 import { sp } from "@/utils/mask";
+import { cardProps } from "@/types/types";
 
 
-const Card = ({ data , dashboard , waiting }) => {
+const Card = ({ data , dashboard = false , waiting = false , admin = false , userID }: cardProps ) => {
 
     const { _id, Category, Title, Address, Cost , Published , Rejected ,RejectNUM } = data
 
@@ -26,7 +27,7 @@ const Card = ({ data , dashboard , waiting }) => {
                     <span className="mt-1" >{ Address }</span></p>
                 <p className="flex gap-x-2 items-center" ><IoPricetags className="text-orange font-bold"/>{ sp( Cost ) } $</p>
             </div>
-            { dashboard ?
+            { dashboard || admin ?
                 <div className="my-3" >
                     { status === ADS_STATUS.PUBLISHED ? <p className="text-xs bg-[#92e6a7] text-[#155d27] px-2 py-1 rounded w-fit " >{ ADS_STATUS.PUBLISHED }</p> : null }
                     { status === ADS_STATUS.REJECTED ? <p className="text-xs bg-[#ff8fa3] text-[#a4133c] text-[#] px-2 py-1 rounded w-fit " >{ ADS_STATUS.REJECTED }</p> : null }
@@ -35,15 +36,17 @@ const Card = ({ data , dashboard , waiting }) => {
             }
             <div className="flex justify-end mt-3" >
                 {
-                    !dashboard ? 
+                    admin ?null :!dashboard? 
                          <Link href={`/advertisments/${_id}`} className="flex gap-x-1 text-orange items-center text-xs" ><BiLeftArrowAlt />See Advertisments</Link>
-                    : <div>
-                        {
-                            waiting ? 
-                                <Link href={`/dashboard/waiting-Advertisments/${_id}`} className="flex gap-x-1 text-orange items-center text-xs" ><BiLeftArrowAlt />See Advertisments</Link>
-                            : <Link href={`/dashboard/my-advertisments/${_id}`} className="flex gap-x-1 text-orange items-center text-xs" ><BiLeftArrowAlt />See Advertisments</Link>
-                        }
-                    </div>
+                    : 
+                        (waiting && dashboard )? 
+                            <Link href={`/dashboard/waiting-Advertisments/${_id}`} className="flex gap-x-1 text-orange items-center text-xs" ><BiLeftArrowAlt />See Advertisments</Link>
+                        : <Link href={`/dashboard/my-advertisments/${_id}`} className="flex gap-x-1 text-orange items-center text-xs" ><BiLeftArrowAlt />See Advertisments</Link>
+                    
+                }
+                
+                {
+                    admin ? <Link href={`/dashboard/users/${ userID }/${ _id }`} className="flex gap-x-1 font-bold text-orange items-center text-xs" ><BiLeftArrowAlt />See Advertisments</Link> : null
                 }
             </div>
         </div>

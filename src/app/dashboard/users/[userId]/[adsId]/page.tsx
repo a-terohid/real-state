@@ -4,10 +4,12 @@ import { ERROR } from "@/types/enum";
 import connectDB from "@/utils/connectDB";
 
 
-const page = async ({ params: { myAdvertismentsId } }) => {
+const page = async ({ params : { adsId } }) => {
+
+    
 
     await connectDB()
-    const advertisments = await Advertisement.findOne({ _id : myAdvertismentsId });
+    const advertisments = await Advertisement.findOne({ _id : adsId });
     
 
     if( !advertisments ) {
@@ -16,7 +18,7 @@ const page = async ({ params: { myAdvertismentsId } }) => {
         </div> )
     }
 
-    return ( <DetailsPag advertisments={ advertisments }  dashboard={ true } /> );
+    return ( <DetailsPag advertisments={ advertisments }  dashboard={ true } admin={true} waiting={ true }  />);
 };
 
 export default page;

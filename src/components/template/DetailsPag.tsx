@@ -7,9 +7,10 @@ import { sp } from "@/utils/mask";
 import Link from "next/link";
 import RejectButton from "../elements/RejectButton";
 import PublishdButton from "../elements/PublishdButton";
+import { DetailsPageProps } from "@/types/types";
 
 
-const DetailsPag = ({ advertisments , dashboard , waiting }) => {
+const DetailsPag = ({ advertisments , dashboard , waiting , admin } : DetailsPageProps ) => {
 
     const { Title, 
             Description,
@@ -111,7 +112,7 @@ const DetailsPag = ({ advertisments , dashboard , waiting }) => {
                 </div> : null 
             }
             {
-                dashboard && !waiting ? <div className="border-b-2">
+                (dashboard && !waiting) || admin ? <div className="border-b-2">
                     {
                         status === ADS_STATUS.PUBLISHED ? 
                             <div className="py-4 flex flex-col gap-y-3" >
@@ -153,7 +154,7 @@ const DetailsPag = ({ advertisments , dashboard , waiting }) => {
                 </div> : null
             }
             {
-                dashboard && waiting ? <div className="flex py-4 gap-x-4 items-center justify-center" >
+                dashboard && waiting && status == ADS_STATUS.WAITING ? <div className="flex py-4 gap-x-4 items-center justify-center" >
                     <PublishdButton _id = { _id } />
                     <RejectButton _id = { _id } />
                 </div> : null

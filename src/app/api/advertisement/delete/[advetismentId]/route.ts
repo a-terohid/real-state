@@ -49,6 +49,9 @@ export async function DELETE( req : Request, context ) {
 
             await advertisement.deleteOne({ _id: id });
 
+            user.numberOfAds = user.numberOfAds - 1
+            user.save()
+
             return NextResponse.json(
                 { message: MESSAGE.AD_EDITE },
                 { status: 200 }

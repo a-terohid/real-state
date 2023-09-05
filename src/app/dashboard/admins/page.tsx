@@ -18,10 +18,9 @@ const page = async () => {
         </div> )
     }
 
-    const Users = await User.find({ role : ROLE.USER })
-    
+    const admins = await User.find({ role : ROLE.ADMIN })
 
-    return ( <UsersPage users={ Users } admin={ false } /> );
+    return ( <UsersPage users={ admins } admin={ true } /> );
 };
 
 export default page;

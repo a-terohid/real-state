@@ -3,7 +3,7 @@ import { ROLE } from "@/types/enum";
 import { mask } from "@/utils/mask";
 import PromoteButton from "../elements/PromoteButton";
 
-const UserDetailPage = ({ user , advertisments , role }) => {
+const UserDetailPage = ({ user , advertisments , role , published }) => {
 
     const { name , lastName , email , number , personalID ,numberOfAds , _id } = user
 
@@ -45,17 +45,34 @@ const UserDetailPage = ({ user , advertisments , role }) => {
                     { !advertisments ? <span className=' ml-3 text-sm md:text-base italic text-orange ' >this filed is epmty!</span> : null }
                     {
                         advertisments ?
-                         advertisments.map( ads => <Card key={ ads._id } data={ads} userID={ _id }  admin={ true } /> )
+                         advertisments.map( ads => <Card 
+                                                        key={ ads._id } 
+                                                        data={ads} 
+                                                        userID={ _id }  
+                                                        admin={ true } /> )
                         : null
                     }
                 </div>
             </div>
-            <div className=" py-6 flex justify-center " >
                 {
-                    role === ROLE.OWNER ? 
-                        <PromoteButton  text="Admin" promoteTo={ ROLE.ADMIN } userId={ _id }  /> : null
+                    role === ROLE.OWNER && user.role === ROLE.USER ? 
+                        <div className=" py-6 flex justify-center " >
+                            <PromoteButton  text="Admin" promoteTo={ ROLE.ADMIN } userId={ _id }  />
+                        </div>: null
                 }
-            </div>
+                {
+                    user.role === ROLE.ADMIN ?<div>
+                        <div className=' flex flex-col gap-y-3 py-5' >
+                            <h1 className=' font-bold md:text-lg' >Published Advertisment: </h1>
+                            <div className="ml-3" >
+                                {   !published ? <span className=' ml-3 text-sm md:text-base italic text-orange ' >this filed is epmty!</span> : null  }
+                                {
+                                    published ? published.map( ads => <Card key={ ads._id } data={ads} /> ) : null
+                                }
+                            </div>
+                        </div>
+                    </div> : null
+                }
         </div>
     )
 };

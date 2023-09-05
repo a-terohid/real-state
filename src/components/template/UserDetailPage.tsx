@@ -3,7 +3,7 @@ import { ROLE } from "@/types/enum";
 import { mask } from "@/utils/mask";
 import PromoteButton from "../elements/PromoteButton";
 
-const UserDetailPage = ({ user , advertisments , role , published }) => {
+const UserDetailPage = ({ user , advertisments , role , published } ) => {
 
     const { name , lastName , email , number , personalID ,numberOfAds , _id } = user
 

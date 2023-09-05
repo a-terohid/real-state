@@ -22,7 +22,7 @@ const HomePage = () => {
             <div className="flex flex-wrap justify-center gap-x-5 mt-28 gap-y-10 " >
                 {
                     Object.keys( categoriesString ).map( ( i ) => (
-                        <CategoryCard title={ categoriesString[ i ] } name={ i } />
+                        <CategoryCard key={ i } title={ categoriesString[ i ] } name={ i } />
                     ) )
                 }
             </div>

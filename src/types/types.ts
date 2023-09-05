@@ -61,6 +61,10 @@ type AdvertisementMOGO = Advertisement & {
     _id:  Schema.Types.ObjectId
 }
 
+type userMOGO = User & {
+    _id:  Schema.Types.ObjectId
+}
+
 export type cardProps = {
     data : AdvertisementMOGO ,
     dashboard ?: boolean , 
@@ -76,3 +80,4 @@ export type DetailsPageProps = {
     waiting ?: boolean ,
     admin ?: boolean,
 }
+

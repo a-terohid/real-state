@@ -22,7 +22,7 @@ const page = async ({ params: { userId } }) => {
 
     const advertisments = await Advertisement.find({ UserId : userId });    
 
-    return ( <UserDetailPage user={ user } advertisments={ advertisments } role={ person.role } /> );
+    return ( <UserDetailPage user={ user } advertisments={ advertisments } role={ person.role } published={false} /> );
 };
 
 export default page;

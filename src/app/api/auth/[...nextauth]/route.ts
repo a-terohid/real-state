@@ -9,6 +9,10 @@ import CredentialsProvider from "next-auth/providers/credentials";
 export const authOptions : NextAuthOptions  ={
     session : { strategy: "jwt" },
     providers : [ CredentialsProvider({
+        credentials : {
+            email :{},
+            password :{}
+        },
         async authorize( credentials  ) {
             
             const { email , password } = credentials;
